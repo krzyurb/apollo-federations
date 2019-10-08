@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "sourceMap": true,
+    "target": "esnext",
+    "paths": {
+      "@fed/*": [
+        "packages/*/src"
+      ]
+    }
+  },
+
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

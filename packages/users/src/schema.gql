@@ -1,0 +1,16 @@
+type Query {
+  user(id: ID!): User
+  users: [User]
+  me: User
+}
+
+type User @key(fields: "id") {
+  id: ID!
+  username: String!
+}
+
+extend type Note @key(fields: "id") {
+  id: ID! @external
+  userId: ID! @external
+  user: User @requires(fields: "userId")
+}

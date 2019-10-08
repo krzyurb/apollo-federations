@@ -1,0 +1,21 @@
+{
+  "name": "@fed/gateway",
+  "version": "1.0.0",
+  "main": "dist/index",
+  "types": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "yarn clean && yarn compile",
+    "clean": "rm -rf ./dist",
+    "compile": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@fed/core": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.3",
+    "typescript": "^3.6.2"
+  }
+}

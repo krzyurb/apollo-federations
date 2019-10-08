@@ -1,0 +1,15 @@
+type Note @key(fields: "id") {
+  id: ID!
+  userId: ID!
+  content: String
+}
+
+type Query {
+  note(id: ID!): Note
+  notes: [Note]
+}
+
+extend type User @key(fields: "id") {
+  id: ID! @external
+  notes: [Note]
+}
