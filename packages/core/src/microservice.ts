@@ -1,6 +1,7 @@
 import { ApolloServer } from "apollo-server";
 import { buildFederatedSchema } from "@apollo/federation";
 import { DocumentNode } from "graphql";
+import { GraphQLResolverMap } from "apollo-graphql";
 
 export interface IMicroserviceConfig {
   name: string;
@@ -11,7 +12,11 @@ export default class Microservice {
   private server: ApolloServer;
   private config: IMicroserviceConfig;
 
-  constructor(schema: DocumentNode, resolvers: any, config: IMicroserviceConfig) {
+  constructor(
+    schema: DocumentNode,
+    resolvers: GraphQLResolverMap<any>,
+    config: IMicroserviceConfig,
+  ) {
     this.config = config;
     this.server = this.buildServer(schema, resolvers);
   }
