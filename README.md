@@ -1,71 +1,26 @@
 # Apollo federations
 
-Example of apollo graphql microservices architecture.
+Example of apollo graphql microservices architecture. It is not using any database to make example simpler.
 
-### Running local
+Project consist of four packages:
+- _core_ with some shared logic and types
+- _gateway_ with apollo gateway microservice that bounds everything into single graph
+- _notes_ and _users_ with separeted apollo-servers based services that provides parts of graph
+
+## Running local
 
 ```shell
 $ yarn bootstrap
 $ yarn build
 ```
 
-### Queries examples
+## Queries examples
 
-```graphql
-query GetUserByID {
-  user(id: "1") {
-    id
-    username
-    notes {
-      id
-      userId
-      content
-    }
-  }
-}
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=apollo-federations&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fkrzyurb%2Fapollo-federations%2Fmaster%2Finsomnia.yaml)
 
-query GetUsersList {
-  users {
-    id
-    username
-    notes {
-      id
-      userId
-      content
-    }
-  }
-}
+If you have installed [Insomnia](https://insomnia.rest/) rest client you can check example queries.
 
-query CurrentUser {
-  me {
-    id
-    username
-    notes {
-      id
-      userId
-      content
-    }
-  }
-}
-
-query GetNoteByID {
-  note(id: "1") {
-    id
-    content
-    userId
-  }
-}
-
-query GetAllNotes {
-  notes {
-    id
-    content
-    userId
-  }
-}
-```
-
-### Stack
+## Stack
 
 * [TypeScript](https://github.com/microsoft/TypeScript)
 * [Lerna](https://github.com/lerna/lerna)

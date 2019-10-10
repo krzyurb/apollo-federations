@@ -1,0 +1,183 @@
+_type: export
+__export_format: 4
+__export_date: 2019-10-10T15:48:05.089Z
+__export_source: insomnia.desktop.app:v7.0.1
+resources:
+  - _id: req_59727457d14c4f4383c6bbcc59e5c304
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query GetAllNotes {\n  notes
+        {\n    id\n    content\n    userId\n  }\n}"}'
+    created: 1570721036881
+    description: ""
+    headers:
+      - id: pair_75c06249524640ab8ee530758a447eef
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1570721036881
+    method: POST
+    modified: 1570721184189
+    name: Get all notes
+    parameters: []
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: ""
+    _type: request
+  - _id: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    created: 1570721021507
+    description: ""
+    modified: 1570721021507
+    name: apollo-federations
+    parentId: null
+    _type: workspace
+  - _id: req_08f10dd1d90340a7a5b5b8e9a8ac68e0
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query GetNoteByID {\n  note(id: \"1\")
+        {\n    id\n    content\n    userId\n  }\n}\n"}'
+    created: 1570721049043
+    description: ""
+    headers:
+      - id: pair_75c06249524640ab8ee530758a447eef
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1570627046277.5
+    method: POST
+    modified: 1570721180500
+    name: Get note by ID
+    parameters: []
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: ""
+    _type: request
+  - _id: req_4c44a03f24a24b488094586985307fdc
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query CurrentUser {\n  me {\n    id\n    username\n    notes
+        {\n      id\n      userId\n      content\n    }\n  }\n}"}'
+    created: 1570721055474
+    description: ""
+    headers:
+      - id: pair_75c06249524640ab8ee530758a447eef
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1570580050975.75
+    method: POST
+    modified: 1570721073245
+    name: Get current user
+    parameters: []
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: ""
+    _type: request
+  - _id: req_4276d5e1e50442a89c610957b37fdd22
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query GetUsersList {\n  users
+        {\n    id\n    username\n    notes
+        {\n      id\n      userId\n      content\n    }\n  }\n}\n"}'
+    created: 1570721069712
+    description: ""
+    headers:
+      - id: pair_75c06249524640ab8ee530758a447eef
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1570556553324.875
+    method: POST
+    modified: 1570721177186
+    name: Get users list
+    parameters: []
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: ""
+    _type: request
+  - _id: req_a855b8c9178a4a739d5f7bfc06d5f0d9
+    authentication: {}
+    body:
+      mimeType: application/graphql
+      text: '{"query":"query GetUserByID {\n  user(id: \"1\")
+        {\n    id\n    username\n    notes
+        {\n      id\n      userId\n      content\n    }\n  }\n}\n"}'
+    created: 1570721077463
+    description: ""
+    headers:
+      - id: pair_75c06249524640ab8ee530758a447eef
+        name: Content-Type
+        value: application/json
+    isPrivate: false
+    metaSortKey: -1570544804499.4375
+    method: POST
+    modified: 1570721172771
+    name: Get user by ID
+    parameters: []
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingSendCookies: true
+    settingStoreCookies: true
+    url: ""
+    _type: request
+  - _id: env_e831ec0c5cf0aa2e681c773e175d66cf15c7529d
+    color: null
+    created: 1570721022224
+    data:
+      GatewayURL: localhost:4000
+    dataPropertyOrder:
+      "&":
+        - GatewayURL
+    isPrivate: false
+    metaSortKey: 1570721022224
+    modified: 1570721215814
+    name: Base Environment
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    _type: environment
+  - _id: jar_e831ec0c5cf0aa2e681c773e175d66cf15c7529d
+    cookies: []
+    created: 1570721022237
+    modified: 1570721022237
+    name: Default Jar
+    parentId: wrk_692679b96d134f4ea9c73ea8d39e86ba
+    _type: cookie_jar
+  - _id: env_cd894e3e92c5422e924c502d94f8e8c3
+    color: "#7d69cb"
+    created: 1570721218500
+    data:
+      GatewayURL: localhost:4000
+      NotesServiceURL: localhost:4002
+      UsersServiceURL: localhost:4001
+    dataPropertyOrder:
+      "&":
+        - GatewayURL
+        - UsersServiceURL
+        - NotesServiceURL
+    isPrivate: false
+    metaSortKey: 1570721218500
+    modified: 1570721278767
+    name: Development
+    parentId: env_e831ec0c5cf0aa2e681c773e175d66cf15c7529d
+    _type: environment
